@@ -1,11 +1,15 @@
-# TDD BoilerPlate
+# Algorithms and Data Structures Bootcamp
 
-## How To Use
+To install run `npm install`
 
-```
-git clone https://github.com/sherif20766/boilerplate.git
-cd boilerplate
-npm install
-npm test
-```
+To run unit tests, run`npm test`
 
+## What does it do?
+
+My answers to the (The Coding Interview Bootcamp: Algorithms + Data Structures)[https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/] by Stephen Grider
+
+## Tech Used
+
+-   ES6+
+-   Jest
+-   Parcel (application bundler)
