@@ -13,9 +13,9 @@ const reverse = str => {
 		.join("");
 };
 
-//alternative solution
-//const reverse = str => {
-//	return str.split("").reduce((a, b) => b + a);
-//};
+// alternative solution
+// const reverse = str => {
+//	 return str.split("").reduce((a, b) => b + a);
+// };
 
 export default reverse;
