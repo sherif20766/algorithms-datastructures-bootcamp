@@ -48,6 +48,10 @@ class LinkedList {
 			node = node.next;
 		}
 	}
+
+	clear() {
+		this.head = null;
+	}
 }
 
 export { Node, LinkedList };

@@ -109,3 +109,28 @@ describe("getLast", () => {
 		expect(list.getLast().data).toEqual(1);
 	});
 });
+
+describe("clear", () => {
+	const list = new LinkedList();
+
+	test("is a method in the LinkedList class", () => {
+		expect(() => {
+			list.clear();
+		}).not.toThrow();
+	});
+
+	test("clears the linkedList", () => {
+		list.insertFirst(1);
+		list.insertFirst(1);
+		list.insertFirst(1);
+		expect(list.size()).toEqual(3);
+
+		list.insertFirst(1);
+		list.insertFirst(1);
+		list.insertFirst(1);
+		expect(list.size()).toEqual(6);
+
+		list.clear();
+		expect(list.size()).toEqual(0);
+	});
+});
