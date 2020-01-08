@@ -134,3 +134,24 @@ describe("clear", () => {
 		expect(list.size()).toEqual(0);
 	});
 });
+
+describe("removeFirst", () => {
+	const list = new LinkedList();
+
+	test("is a method in the LinkedList class", () => {
+		list.insertFirst(1);
+		expect(() => {
+			list.removeFirst();
+		}).not.toThrow();
+	});
+
+	test("removes the first node", () => {
+		list.insertFirst(1);
+		list.insertFirst(2);
+		list.insertFirst(3);
+		expect(list.getFirst().data).toEqual(3);
+
+		list.removeFirst();
+		expect(list.getFirst().data).toEqual(2);
+	});
+});
