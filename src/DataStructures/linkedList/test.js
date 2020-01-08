@@ -41,3 +41,25 @@ describe("insertFirst", () => {
 		expect(list.head.data).toEqual(2);
 	});
 });
+
+describe("Size", () => {
+	const list = new LinkedList();
+
+	test("is a method in the LinkedList class", () => {
+		expect(() => {
+			list.size();
+		}).not.toThrow();
+	});
+
+	test("returns the number of items in the LinkedList", () => {
+		list.insertFirst(1);
+		list.insertFirst(1);
+		list.insertFirst(1);
+		expect(list.size()).toEqual(3);
+
+		list.insertFirst(1);
+		list.insertFirst(1);
+		list.insertFirst(1);
+		expect(list.size()).toEqual(6);
+	});
+});
