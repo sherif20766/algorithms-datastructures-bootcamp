@@ -16,3 +16,28 @@ describe("A Node", () => {
 		expect(node.next).toEqual("b");
 	});
 });
+
+describe("A List", () => {
+	test("has a `head` property initialized to `null`", () => {
+		const list = new LinkedList();
+
+		expect(list.head).toEqual(null);
+	});
+});
+
+describe("insertFirst", () => {
+	const list = new LinkedList();
+
+	test("is a method in the LinkedList class", () => {
+		expect(() => {
+			list.insertFirst("abd");
+		}).not.toThrow();
+	});
+
+	test("correctly assigns the `data` argument to the head property", () => {
+		list.insertFirst(1);
+		expect(list.head.data).toEqual(1);
+		list.insertFirst(2);
+		expect(list.head.data).toEqual(2);
+	});
+});
