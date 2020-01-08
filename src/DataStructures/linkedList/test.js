@@ -86,3 +86,26 @@ describe("getFirst", () => {
 		expect(list.getFirst().data).toEqual(6);
 	});
 });
+
+describe("getLast", () => {
+	const list = new LinkedList();
+
+	test("is a method in the LinkedList class", () => {
+		list.insertFirst(1);
+		expect(() => {
+			list.getLast();
+		}).not.toThrow();
+	});
+
+	test("returns the number of items in the LinkedList", () => {
+		list.insertFirst(1);
+		list.insertFirst(2);
+		list.insertFirst(3);
+		expect(list.getLast().data).toEqual(1);
+
+		list.insertFirst(4);
+		list.insertFirst(5);
+		list.insertFirst(6);
+		expect(list.getLast().data).toEqual(1);
+	});
+});
