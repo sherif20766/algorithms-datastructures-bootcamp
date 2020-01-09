@@ -155,3 +155,38 @@ describe("removeFirst", () => {
 		expect(list.getFirst().data).toEqual(2);
 	});
 });
+
+describe("removeLast", () => {
+	test("can run the method when list is empty", () => {
+		const list = new LinkedList();
+		list.insertFirst(1);
+		expect(() => {
+			list.removeLast();
+		}).not.toThrow();
+	});
+
+	test("removes the last node when list length is 1", () => {
+		const list = new LinkedList();
+		list.insertFirst(1);
+		list.removeLast();
+		expect(list.head).toEqual(null);
+	});
+	test("removes the last node when list length is 2", () => {
+		const list = new LinkedList();
+		list.insertFirst(1);
+		list.insertFirst(2);
+		list.removeLast();
+		expect(list.size()).toEqual(1);
+		expect(list.getLast().data).toEqual(2);
+	});
+
+	test("removes the last node when list length is 3", () => {
+		const list = new LinkedList();
+		list.insertFirst(1);
+		list.insertFirst(2);
+		list.insertFirst(3);
+		list.removeLast();
+		expect(list.size()).toEqual(2);
+		expect(list.getLast().data).toEqual(2);
+	});
+});
