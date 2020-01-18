@@ -212,3 +212,54 @@ describe("getAt", () => {
 		expect(list.getAt(2).data).toEqual(1);
 	});
 });
+describe("removeAt", () => {
+	test("doesn't crash an empty list", () => {
+		const list = new LinkedList();
+		expect(() => {
+			list.removeAt(0);
+			list.removeAt(1);
+			list.removeAt(2);
+		}).not.toThrow();
+	});
+	test("doesn't crash if index is out of bounds", () => {
+		const list = new LinkedList();
+
+		expect(() => {
+			list.insertFirst("a");
+			list.removeAt(2);
+		}).not.toThrow();
+	});
+	test("removes the first node", () => {
+		const list = new LinkedList();
+		list.insertFirst(1);
+		list.insertFirst(2);
+		list.insertFirst(3);
+
+		list.removeAt(0);
+
+		expect(list.getFirst().data).toEqual(2);
+	});
+	test("removes the last node", () => {
+		const list = new LinkedList();
+		list.insertFirst(1);
+		list.insertFirst(2);
+		list.insertFirst(3);
+
+		list.removeAt(2);
+
+		expect(list.getLast().data).toEqual(2);
+	});
+	test("removes the node at given index", () => {
+		const list = new LinkedList();
+		list.insertLast(1);
+		list.insertLast(2);
+		list.insertLast(3);
+		list.insertLast(4);
+
+		expect(list.getAt(1).data).toEqual(2);
+
+		list.removeAt(1);
+
+		expect(list.getAt(1).data).toEqual(3);
+	});
+});

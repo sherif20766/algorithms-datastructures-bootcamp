@@ -81,11 +81,13 @@ class LinkedList {
 	}
 
 	insertLast(data) {
-		if (!this.head) {
-			this.inserFirst(data);
-		}
 		const last = this.getLast();
-		last.next = new Node(data);
+
+		if (last) {
+			last.next = new Node(data);
+		} else {
+			this.head = new Node(data);
+		}
 	}
 
 	getAt(index) {
@@ -100,6 +102,22 @@ class LinkedList {
 			node = node.next;
 		}
 		return null;
+	}
+	removeAt(index) {
+		if (!this.head) {
+			return;
+		}
+
+		if (index === 0) {
+			this.head = this.head.next;
+			return;
+		}
+
+		const previous = this.getAt(index - 1);
+		if (!previous || !previous.next) {
+			return;
+		}
+		previous.next = previous.next.next;
 	}
 }
 
