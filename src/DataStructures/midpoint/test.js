@@ -15,13 +15,13 @@ describe("midpoint returns the middle node of an odd numbered list", () => {
 		list.insertLast(4);
 		list.insertLast(5);
 
-		expect(midpoint(LinkedList).data).toEqual(3);
+		expect(midpoint(list).data).toEqual(3);
 	});
 	test("when the list has 7 elements", () => {
 		list.insertLast(6);
 		list.insertLast(7);
 
-		expect(midpoint(LinkedList).data).toEqual(4);
+		expect(midpoint(list).data).toEqual(4);
 	});
 });
 
@@ -32,12 +32,12 @@ describe("midpoint returns the middle node of an even numbered list", () => {
 		list.insertLast(1);
 		list.insertLast(2);
 
-		expect(midpoint(LinkedList).data).toEqual(1);
+		expect(midpoint(list).data).toEqual(1);
 	});
 	test("when the list has 4 elements", () => {
 		list.insertLast(3);
 		list.insertLast(4);
 
-		expect(midpoint(LinkedList).data).toEqual(2);
+		expect(midpoint(list).data).toEqual(2);
 	});
 });

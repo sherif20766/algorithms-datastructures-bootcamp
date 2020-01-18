@@ -12,5 +12,15 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-const midpoint = list => {};
+const midpoint = list => {
+	let slow = list.getFirst();
+	let fast = list.getFirst();
+
+	while (fast.next && fast.next.next) {
+		slow = slow.next;
+		fast = fast.next.next;
+	}
+
+	return slow;
+};
 export default midpoint;
