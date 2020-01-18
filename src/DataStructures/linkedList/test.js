@@ -190,3 +190,25 @@ describe("removeLast", () => {
 		expect(list.getLast().data).toEqual(2);
 	});
 });
+
+describe("insertLast", () => {
+	test("adds to the end of the list", () => {
+		const list = new LinkedList();
+		list.insertFirst(1);
+		list.insertFirst(2);
+		list.insertFirst(3);
+		list.insertLast(0);
+		expect(list.getLast().data).toEqual(0);
+	});
+});
+describe("getAt", () => {
+	test("returns node at a given index", () => {
+		const list = new LinkedList();
+		list.insertFirst(1);
+		list.insertFirst(2);
+		list.insertFirst(3);
+		expect(list.getAt(0).data).toEqual(3);
+		expect(list.getAt(1).data).toEqual(2);
+		expect(list.getAt(2).data).toEqual(1);
+	});
+});
