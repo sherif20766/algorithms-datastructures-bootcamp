@@ -263,3 +263,58 @@ describe("removeAt", () => {
 		expect(list.getAt(1).data).toEqual(3);
 	});
 });
+
+describe("InsertAt", () => {
+	test("inserts a new node with data at the 0 index when the list is empty", () => {
+		const list = new LinkedList();
+		list.insertAt("hi", 0);
+		expect(list.getFirst().data).toEqual("hi");
+	});
+
+	test("inserts a new node with data at the 0 index when the list has elements", () => {
+		const list = new LinkedList();
+		list.insertLast("a");
+		list.insertLast("b");
+		list.insertLast("c");
+		list.insertAt("hi", 0);
+		expect(list.getAt(0).data).toEqual("hi");
+		expect(list.getAt(1).data).toEqual("a");
+		expect(list.getAt(2).data).toEqual("b");
+		expect(list.getAt(3).data).toEqual("c");
+	});
+
+	test("inserts a new node with data at a middle index", () => {
+		const list = new LinkedList();
+		list.insertLast("a");
+		list.insertLast("b");
+		list.insertLast("c");
+		list.insertLast("d");
+		list.insertAt("hi", 2);
+		expect(list.getAt(0).data).toEqual("a");
+		expect(list.getAt(1).data).toEqual("b");
+		expect(list.getAt(2).data).toEqual("hi");
+		expect(list.getAt(3).data).toEqual("c");
+		expect(list.getAt(4).data).toEqual("d");
+	});
+
+	test("inserts a new node with data at a last index", () => {
+		const list = new LinkedList();
+		list.insertLast("a");
+		list.insertLast("b");
+		list.insertAt("hi", 2);
+		expect(list.getAt(0).data).toEqual("a");
+		expect(list.getAt(1).data).toEqual("b");
+		expect(list.getAt(2).data).toEqual("hi");
+	});
+
+	test("insert a new node when index is out of bounds", () => {
+		const list = new LinkedList();
+		list.insertLast("a");
+		list.insertLast("b");
+		list.insertAt("hi", 30);
+
+		expect(list.getAt(0).data).toEqual("a");
+		expect(list.getAt(1).data).toEqual("b");
+		expect(list.getAt(2).data).toEqual("hi");
+	});
+});
